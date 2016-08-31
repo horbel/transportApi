@@ -1,0 +1,9 @@
+﻿<div class="page-header" ng-controller="JorneyController" ng-init="initRoutes()">   
+      <h3 class="text-center">Bus routes' names</h3>       
+            <ul class="routes-list">
+                <li ng-repeat="route in routes" class="pull-left text-center">
+                    <span ng-bind="route.name" data-id="{{route.id}}"
+                           ng-click="paintRoute(route.id)"></span>
+                </li>
+            </ul>  
+</div>

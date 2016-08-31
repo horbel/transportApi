@@ -2,26 +2,29 @@
 <html ng-app="jorneyApp">
 <head>
     <title></title>
-	<meta charset="utf-8" />
-    <link href="Content/styles/index.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    
+    <link href="Content/styles/index.css" rel="stylesheet" />
 </head>
-<body ng-controller="JorneyController">
-    <button ng-click="getBusIds()">load</button>
+<body ng-controller="JorneyController" class="clear-fix">
+    <div class="wrapper-flex">
+        <div class="content-flex">
+            <nav class="nav navbar-inverse header-navbar text-center">
+                    <span>Simple web test app</span>               
+            </nav>
+            <div class="col-sm-12" ng-include src="'Templates/routesList.html'"></div>
+            <div id="map" class="col-sm-12"></div>
+        </div>
+        <div class="navbar-footer"><span><a href="https://github.com/horbel" id="github-link">My github</a></span></div>
+    </div>
 
-        
 
-    <h3>Google Maps</h3>
-    <div id="map"></div>
-    <div ng-include src="Templates/jorneyResultPage.html"></div>
     <script src="Scripts/jquery-3.1.0.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
-    
     <script src="Controllers/map.js"></script>
-   
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUP9Hm6EaKD5uSl0Yhf-2sed6esrO-mo&callback=initMap">
     </script>

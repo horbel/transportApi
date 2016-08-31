@@ -1,7 +1,76 @@
-﻿body {
+﻿html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: url('../Img/grayBack.jpg') 100% 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto;
 }
 
 #map {
-    width: 100%;
     height: 400px;
+    margin-top: 30px;
+}
+
+ul {
+    list-style: none;
+}
+
+.routes-list li {
+    border: 2px solid black;
+    font-weight: bold;
+    font-size: 16px;
+    color: #110251;
+    background-color: #c7eb91;
+    margin: 5px 5px;
+    width: 35px;
+}
+
+    .routes-list li:hover {
+        background-color: #e66363;
+        cursor: pointer;
+    }
+
+h3 {
+    margin-top: 0;
+}
+
+.page-header {
+    margin-top: 10px;
+}
+
+.wrapper-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content-flex {
+    flex: 1 0 auto;
+}
+
+.header-navbar, .navbar-footer {
+    flex: 0 0 auto;
+    height: 50px;
+    text-align: center;
+    font-size: 25px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.navbar-footer {
+    background-color: #082306;
+}
+/*why this doesnt work?*/
+#github-link :hover {
+    color: red;
 }
