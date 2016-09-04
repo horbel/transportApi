@@ -5,6 +5,7 @@
 body {
     height: 100%;
     background: url('../Img/grayBack.jpg') 100% 100%;
+
 }
 
 a {
@@ -18,7 +19,7 @@ a {
 
 #map {
     height: 400px;
-    margin-top: 30px;
+    margin-top: 30px;   
 }
 
 ul {
@@ -74,3 +75,14 @@ h3 {
 #github-link :hover {
     color: red;
 }
+
+#loadingImg {
+    display:none;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%); 
+  width: 20%;
+  height: 20%;
+}
+

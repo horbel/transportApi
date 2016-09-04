@@ -7,27 +7,31 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/styles/index.css" rel="stylesheet" />
 </head>
-<body ng-controller="JorneyController" class="clear-fix">
+<body ng-controller="JorneyController" class="clear-fix" ng-init="initMap();initRoutes()">
     <div class="wrapper-flex">
         <div class="content-flex">
             <nav class="nav navbar-inverse header-navbar text-center">
-                    <span>Simple web test app</span>               
+                <span>Simple web test app</span>
             </nav>
-            <div class="col-sm-12" ng-include src="'Templates/routesList.html'"></div>
-            <div id="map" class="col-sm-12"></div>
+            <div class="col-sm-12" ng-include src="'Templates/routesList.html'"></div>          
+            <div id="map" class="col-sm-12">
+            </div>
         </div>
         <div class="navbar-footer"><span><a href="https://github.com/horbel" id="github-link">My github</a></span></div>
     </div>
 
+    <img id="loadingImg" src="Content/Img/loading.gif" />
 
     <script src="Scripts/jquery-3.1.0.js"></script>
     <script src="Scripts/bootstrap.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
-    <script src="Controllers/map.js"></script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUP9Hm6EaKD5uSl0Yhf-2sed6esrO-mo&callback=initMap">
-    </script>
+    <!--<script src="Controllers/map.js"></script>-->
     <script src="Controllers/JorneyController.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUP9Hm6EaKD5uSl0Yhf-2sed6esrO-mo">
+    </script>
+
+    <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUP9Hm6EaKD5uSl0Yhf-2sed6esrO-mo&callback=initMap">-->
 </body>
 </html>
