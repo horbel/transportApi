@@ -13,25 +13,20 @@
             <nav class="nav navbar-inverse header-navbar text-center">
                 <span>Simple web test app</span>
             </nav>
-            <div class="col-sm-12" ng-include src="'Templates/routesList.html'"></div>          
-            <div id="map" class="col-sm-12">
+            <div class="col-xs-12" ng-include src="'Templates/routesList.html'"></div>          
+            <div id="map" class="col-xs-12">
             </div>
         </div>
         <div class="navbar-footer"><span><a href="https://github.com/horbel" id="github-link">My github</a></span></div>
     </div>
-
     <img id="loadingImg" src="Content/Img/loading.gif" />
 
     <script src="Scripts/jquery-3.1.0.js"></script>
     <script src="Scripts/bootstrap.js"></script>
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>
-    <!--<script src="Controllers/map.js"></script>-->
+    <script src="Scripts/angular.js"></script>   
     <script src="Controllers/JorneyController.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUP9Hm6EaKD5uSl0Yhf-2sed6esrO-mo">
-    </script>
-
-    <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdUP9Hm6EaKD5uSl0Yhf-2sed6esrO-mo&callback=initMap">-->
+    </script>    
 </body>
 </html>

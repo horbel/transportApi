@@ -21,20 +21,27 @@ function JorneyCtrl($scope, $http, ACCESS_PARAMS) {
         });
     }
     $scope.initMap = function () {
+        startLoadingAnimation();
         $scope.map = new google.maps.Map(document.getElementById('map'), {
             //set London's coords 
             center: { lat: 51.528837, lng: -0.165653 },
             zoom: 10
         });
         google.maps.event.addDomListener(window, 'load', $scope.initialize);
+        google.maps.event.addListenerOnce($scope.map, 'idle', function () {
+            stopLoadingAnimation();
+        });        
     }
 
-    $scope.paintRoute = function (routeId) {        
+    $scope.paintRoute = function (routeId) {
+        if ($scope.onLoading) {  //map or stations info have onLoading state
+            return false;
+        }
         getRouteInfo(routeId, function (stationsInfo) {
             setMarkers(stationsInfo);
         });         
     }
-
+   
     function getRouteInfo(routeId, setMarkers) {
         startLoadingAnimation();
         $http.get("https://api.tfl.gov.uk/Line/" + routeId + "/Route/Sequence/ inbound?serviceTypes=regular&excludeCrowding=True&app_id=" + ACCESS_PARAMS.APP_ID + "&app_key=" + ACCESS_PARAMS.APP_KEY)
@@ -47,8 +54,7 @@ function JorneyCtrl($scope, $http, ACCESS_PARAMS) {
             console.log(data);
             stopLoadingAnimation();
             $scope.currentRouteStationsInfo = null;
-        });        
-    
+        });  
     }
 
     function setMarkers(routeStationsInfo) {
@@ -75,16 +81,16 @@ function JorneyCtrl($scope, $http, ACCESS_PARAMS) {
         }       
     }
 
+    $scope.onLoading = true; //this flag needs for make spans unclickable
     function startLoadingAnimation()
     {
+        $scope.onLoading = true;
         var imgObj = $("#loadingImg");
-        imgObj.show();        
-        //var centerY = ($('body').height() + imgObj.height()) / 2;
-        //var centerX = ($('body').width() + imgObj.width()) / 2;
-        //imgObj.offset({ top:centerY , left: centerX });
+        imgObj.show();      
     } 
     function stopLoadingAnimation() 
     {
+        $scope.onLoading = false;
         $("#loadingImg").hide();
     }
 }
