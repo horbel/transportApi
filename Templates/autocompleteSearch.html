@@ -1,0 +1,9 @@
+﻿<input type="text" placeholder="Search for route name..." class="route-input"
+       ng-keydown="checkKeyDown($event)" ng-keyup="checkKeyUp($event)" 
+       ng-change="search(searchText)" ng-model="searchText" />
+<ul class="suggestions-list">
+    <li ng-repeat="suggestion in suggestions track by $index"        
+        ng-click="assignValueAndHide($index)" ng-bind="suggestion"></li>
+</ul>
+
+<!--ng-class="{active : selectedIndex === $index}"-->

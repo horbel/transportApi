@@ -41,9 +41,9 @@ ul {
     }
 
 a.disabled {
-    pointer-events: none; 
-    cursor: default; 
-    color: #999; 
+    pointer-events: none;
+    cursor: default;
+    color: #999;
 }
 
 h3 {
@@ -85,4 +85,15 @@ h3 {
     transform: translate(-50%, -50%);
     width: 20%;
     height: 20%;
+}
+
+.suggestions-list {
+    width: 12em;
+    height: 20em;
+    line-height: 2em;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    overflow: scroll;
+    overflow-x: hidden;
 }
